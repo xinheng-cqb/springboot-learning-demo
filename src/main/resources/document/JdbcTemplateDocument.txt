@@ -1,0 +1,13 @@
+涉及到的类：User UserService UserServiceImpl (其中User类中包含的各个注解可以先注释掉，与这个模块无关)
+涉及到的测试：UserServiceTest (要保证数据库能连通)
+
+在Spring Boot基础下配置数据源和通过JdbcTemplate编写数据访问的示例。
+首先是添加依赖，具体的请查看下pom文件每个依赖都有注释的。
+接着是在application.properties中添加数据源信息。
+
+多数据源配置：
+随着业务量发展，我们通常会进行数据库拆分或是引入其他数据库，从而我们需要配置多个数据源
+涉及到的类： DataSourceConfig
+涉及到的测试：MutiDataSourceTest
+
+特别备注：因为多数据是的注入的JdbcTemplate实例不止一个所以需要在UserServiceImpl中添加注解@Qualifier(beanName) ,单数据源时可以去掉该注解

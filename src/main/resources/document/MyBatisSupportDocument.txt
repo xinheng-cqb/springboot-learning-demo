@@ -1,0 +1,11 @@
+涉及到的类：City CityMapper 
+测试类：MyBatisSupportTest (testXML方法是下面要用的，可以先注释掉)
+
+现在项目开发中，使用MyBatis是比较常见的，Spring Boot中整合MyBatis，可以通过注解方式实现映射。
+本次使用的都是通过注解的方式，而使用xml的方式相对于注解的方式 可以进行&lt;if&gt;&lt;/if&gt;的判断，所以在存在有逻辑判断时最好是用xml
+有个坑：因为以前的模块配置了多数据源，这次模块开发中没有指定使用哪个数据源，为啥默认是用secondDataSource这个数据源（总共有两个数据源），找了半天还未发现原因，如果谁知道了，希望能留言说明下，在此先谢谢能够指出的人。
+
+以xml的方式整合MyBatis
+需要添加一个MyBatisConfig来定义配置源信息和xml文件位置信息,相应的sql在.xml文件中添加，然后去掉mapper类上的注解配置。
+涉及的类 City CityUseXMLMapper MyBatisConfig 
+测试的类：MyBatisSupportTest

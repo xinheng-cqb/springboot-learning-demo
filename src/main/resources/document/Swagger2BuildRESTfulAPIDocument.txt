@@ -1,0 +1,6 @@
+Swagger2可以轻松的整合到Spring Boot中，并与Spring MVC程序配合组织出强大RESTful API文档。
+它既可以减少我们创建文档的工作量，同时说明内容又整合入实现代码中，让维护文档和修改代码整合为一体，可以让我们在修改代码逻辑的同时方便的修改文档说明。
+
+涉及到的类：Swagger2  Swagger2DemoController City
+涉及到的测试：启动Spring Boot程序，访问：http://localhost:1921/swagger-ui.html
+。就能看到前文所展示的RESTful API的页面。我们可以再点开具体的API请求，下面的try it out 按钮可以查看具体的效果。（其它功能请自行探索）

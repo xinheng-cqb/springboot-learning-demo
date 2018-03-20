@@ -1,0 +1,9 @@
+Spring StateMachine框架目前差不多也才刚满一岁多。它的主要功能是帮助开发者简化状态机的开发过程，让状态机结构更加层次化。
+首先当然是添加pom依赖，
+这里用个例子来说明如何使用：假设需要实现一个订单的相关流程，其中包括订单创建、订单支付、订单收货三个动作。
+这里共有三个状态（待支付、待收货、结束）以及两个引起状态迁移的事件（支付、收货），其中支付事件PAY会触发状态从待支付UNPAID状态到待收货WAITING_FOR_RECEIVE状态的迁移，而收货事件RECEIVE会触发状态从待收货WAITING_FOR_RECEIVE状态到结束DONE状态的迁移。
+涉及到的类:OrderEvent OrderStatus
+
+状态机配置类：StatusMachineConfig 
+监听器配置类：EventConfig
+测试类：StatusMachineSupportTest

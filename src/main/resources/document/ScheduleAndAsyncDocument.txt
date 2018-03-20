@@ -1,0 +1,15 @@
+定时任务：
+定时任务是在开发中经常会碰到的一个需求比如定时地发送一些短信、邮件之类的操作，也可能会定时地检查和监控一些标志、参数等，在Spring Boot中编写定时任务是非常简单的事
+在主类（Application）中加入@EnableScheduling注解，来声明启用定时任务的配置
+在需要做定时任务的函数上添加@schedule注解，后面要添加参数配置：
+@Scheduled(fixedRate = 5000) ：上一次开始执行时间点之后5秒再执行
+@Scheduled(fixedDelay = 5000) ：上一次执行完毕时间点之后5秒再执行
+@Scheduled(initialDelay=1000, fixedRate=5000) ：第一次延迟1秒后执行，之后按fixedRate的规则每5秒执行一次
+@Scheduled(cron="*/5 * * * * *") ：通过cron表达式定义规则(百度cron表达式的使用方法)
+参考类：ScheduleTask （需保证该类注入了，schedule注解才能生效）
+
+异步调用：
+在Spring Boot中通过使用@Async注解就能简单的将原来的同步函数变为异步函数，从而实现异步调用。
+为了让@Async注解能够生效，还需要在Spring Boot的主程序（Application）中配置@EnableAsync
+参考类：AsyncTask
+ps:理解多线程的，对这个应该好懂，不知道多线程的先去学习下~~

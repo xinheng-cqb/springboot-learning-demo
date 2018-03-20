@@ -1,0 +1,9 @@
+在运行测试用例前需保证本地电脑上装了redis（怎么装，百度），并且启动了服务（如果改了redis的默认配置，需要在application.properties中做相应的改动）
+涉及的类：RedisTestEntity RedisObjectSerializer RedisConfig
+测试类：RedisServiceTest
+
+Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库。(Redis中文社区：http://www.redis.cn/ ) 
+Redis的各个参数及其说明参考application.properties文件
+其中spring.redis.database的配置通常使用0即可，Redis在配置的时候可以设置数据库数量，默认为16，可以理解为数据库的schema
+Springboot中自带的StringRedisTemplate对象可以支持的是String类型操作，该模块有个RedisTemplate<K, V>接口，StringRedisTemplate就相当于RedisTemplate<String, String>的实现。
+如果是自定义对象，需要实现RedisSerializer<T>接口来对传入对象进行序列化和反序列化，对象本身一定要是实现了可序列化接口的

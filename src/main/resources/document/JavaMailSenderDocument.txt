@@ -1,0 +1,6 @@
+Spring提供了非常好用的JavaMailSender接口实现邮件发送。在Spring Boot的Starter模块中也为此提供了自动化配置。
+首先是添加依赖，具体的可查看pom.xml文件。然后是在Application.properties文件中加上相应的配置
+	特别声明：用户名是 username@qq.com （这里以QQ邮箱为例） ，密码不是qq邮箱的密码是qq邮箱开启smtp服务时提供的验证码，而且只有开启了stmp服务才能做到邮件的发送。
+涉及到的类：SendMailTask 
+涉及到的测试：SendMailTest 
+代码运行没问题的话，会在接收邮件方看到发送的邮件。

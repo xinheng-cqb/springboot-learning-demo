@@ -1,0 +1,17 @@
+编写Web应用时，经常需要对页面做一些安全控制，比如：对于没有访问权限的用户需要转到登录表单页面.简单学习下在Spring Boot中如何使用Spring Security进行安全控制
+Spring Security为身份认证提供了众多选项，后端可以是JDBC（Java Database Connectivity）、LDAP和内存用户存储。
+涉及到类：SecurityController WebSecurityConfig index.html login.html security.html
+测试方法：运行Application类启动应用，访问http://localhost:1921/ 进行测试。
+
+PS:注意浏览器中URL的变化
+根据配置，Spring Security提供了一个过滤器来拦截请求并验证用户身份。如果用户身份认证失败，页面就重定向到/login?error，并且页面中会展现相应的错误信息。
+若用户想要注销登录，可以通过访问/login?logout请求，在完成注销之后，页面展现相应的成功消息。
+
+访问http://localhost:1921/可以正常访问。但是访问http://localhost:1921/security的时候被重定向到了http://localhost:1921/login页面，因为没有登录，用户没有访问权限，
+通过输入用户名user和密码password进行登录后，跳转到了Spring Security页面，通过点击注销，就可以完成注销操作。
+
+通过数据库来配置用户是否有权限登录
+对应的实体必须实现UserDetails 接口 具体实现细节请参考UserSecurityInfo类
+对应的配置数据库访问与原先的类似，可以有多重方式，这里选用的是用MyBatis链接。
+涉及到的类（在原有的基础上）：UserSecurityInfo UserSecurityMapper 
+测试方式：通过访问http://localhost:1921/ 进行测试。输入的用户名使用数据库中的用户名和密码

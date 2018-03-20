@@ -1,0 +1,38 @@
+涉及到的类：ThymeleafDemoController  
+涉及到的测试：通过运行Application中的main方法启动服务，通过浏览器访问http://localhost:1921/thymeleaf 查看效果（其中端口号默认是8080,这里是因为在application.properties配置文件中改为1921了）
+
+静态资源访问
+
+在我们开发Web应用的时候，需要引用大量的js、css、图片等静态资源。
+
+默认配置
+
+Spring Boot默认提供静态资源目录位置需置于classpath下，目录名需符合如下规则：
+
+/static
+/public
+/resources
+/META-INF/resources
+举例：我们可以在src/main/resources/目录下创建static，在该位置放置一个图片文件。启动程序后，尝试访问http://localhost:8080/Cartoon.png。如能显示图片，配置成功。
+
+模板引擎
+
+在动态HTML实现上Spring Boot依然可以完美胜任，并且提供了多种模板引擎的默认配置支持，所以在推荐的模板引擎下，我们可以很快的上手开发动态网站。
+
+Spring Boot提供了默认配置的模板引擎主要有以下几种：
+
+Thymeleaf
+FreeMarker
+Velocity
+Groovy
+Mustache
+Spring Boot建议使用这些模板引擎，避免使用JSP，若一定要使用JSP将无法实现Spring Boot的多种特性。
+
+当你使用上述模板引擎中的任何一个，它们默认的模板配置路径为：src/main/resources/templates。当然也可以修改这个路径，具体如何修改，参考Templates_ThymeleafDefaultConfig.txt
+
+Thymeleaf
+
+Thymeleaf是一个XML/XHTML/HTML5模板引擎，可用于Web与非Web环境中的应用开发。它是一个开源的Java库，基于Apache License 2.0许可，由Daniel Fernández创建，该作者还是Java加密库Jasypt的作者。
+
+Thymeleaf提供了一个用于整合Spring MVC的可选模块，在应用开发中，你可以使用Thymeleaf来完全代替JSP或其他模板引擎，如Velocity、FreeMarker等。Thymeleaf的主要目标在于提供一种可被浏览器正确显示的、
+格式良好的模板创建方式，因此也可以用作静态建模。你可以使用它创建经过验证的XML与HTML模板。相对于编写逻辑或代码，开发者只需将标签属性添加到模板中即可。接下来，这些标签属性就会在DOM（文档对象模型）上执行预先制定好的逻辑。

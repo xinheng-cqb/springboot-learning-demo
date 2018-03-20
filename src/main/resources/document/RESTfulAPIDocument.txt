@@ -1,0 +1,6 @@
+涉及到的类：City  CityController
+涉及到的单元测试：CityControllerTest
+
+这个模块涉及到了Spring MVC中最为常用的几个核心注解：@Controller,@RestController,RequestMapping以及一些参数绑定的注解：@PathVariable,@ModelAttribute,@RequestParam等
+对上面提到的注解在类中有些简单介绍，具体用法请自个去百度下各个注解的作用，这里就不一一介绍了。
+

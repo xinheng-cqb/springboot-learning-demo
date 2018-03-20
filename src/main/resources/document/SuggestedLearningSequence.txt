@@ -1,0 +1,44 @@
+springboot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。
+该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。通过这种方式，Spring Boot致力于在蓬勃发展的快速应用开发领域（rapid application development）成为领导者。
+springboot特点：
+1. 创建独立的Spring应用程序
+2. 嵌入的Tomcat，无需部署WAR文件
+3. 简化Maven配置
+4. 自动配置Spring
+5. 提供生产就绪型功能，如指标，健康检查和外部配置
+6. 绝对没有代码生成和对XML没有要求配置
+
+为了更好的掌握springboot相关的知识，并且学会使用，建议按照如下的学习顺序进行：
+PS:后面模块配置访问控制，访问页面前需要输入用户名和密码 分别是 test 123456 如果嫌麻烦可以需要在pom文件中将相关依赖注释掉
+1、Web开发模块：
+
+HelloWorldDocument.txt -> 
+ApplicationPropertiesDocument.txt ->
+RESTfulAPIDocument.txt ->
+TemplatesDocument.txt Templates_ThymeleafDefaultConfig.txt ->
+Swagger2BuildRESTfulAPIDocument.txt ->
+
+2、数据访问模块：
+JdbcTemplateDocument.txt ->
+DataJpaDocument.txt ->
+RedisSupportDocument.txt ->
+MyBatisSupportDocument.txt ->
+TransactionManagerDocument.txt ->
+
+3、日志管理模块
+LoggerManagerDocument.txt ->
+AopPrintLoggerDocument.txt ->
+
+4、其它内容模块
+ 4.1 定时任务和异步调用
+ ScheduleAndAsyncDocument.txt ->
+ 4.2 访问安全控制
+ SecurityControllerDocument.txt ->
+ 4.3 实现邮件发送：简单邮件、附件邮件、嵌入资源的邮件 
+ JavaMailSenderDocument.txt ->
+ 4.4 缓存模块
+ CacheSupportDocument.txt ->
+ 4.5 RabbitMQ
+ RabbitMQSupportDocument.txt ->
+ 4.6 StateMachine
+ StateMachineSupportDocument.txt ->
